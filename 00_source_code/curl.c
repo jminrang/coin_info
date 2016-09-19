@@ -37,6 +37,7 @@ int get_curl_data(void)
         return  -1;
     } else  {
         printf(GRN "get_date : " RESET "%lu bytes retrieved\n", (long)target_data.size);
+//        printf("%s\n", target_data.memory);
     }
 
     return  0;

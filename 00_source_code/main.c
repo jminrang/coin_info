@@ -1,4 +1,5 @@
 #include "curl_struct.h"
+#include "json_parsing.h"
 
 int main()
 {
@@ -9,6 +10,8 @@ int main()
     get_curl_data();
 
     del_curl();
+
+    json_parsing();
 
     return 0;
 }
