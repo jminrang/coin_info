@@ -6,6 +6,7 @@ OBJS	= $(addsuffix .o,$(basename $(SRCS)))
 CFLAGS	= -lcurl
 
 all: $(OBJS)
+	@echo "LD  "$(TARGET)
 	@$(CC) $(OBJS) -o $(TARGET) $(CFLAGS)
 
 %.o: %.c
