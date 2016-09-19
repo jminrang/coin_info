@@ -1,3 +1,6 @@
+# Target
+coin_info
+
 # Object files
 *.o
 *.ko
