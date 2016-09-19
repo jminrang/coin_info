@@ -3,7 +3,7 @@ TARGET  = coin_info
 SRCS	= $(wildcard 00_source_code/*.c)
 OBJS	= $(addsuffix .o,$(basename $(SRCS)))
 
-CFLAGS	= -lcurl -ljson -I./01_include
+CFLAGS	= -lcurl -ljson -I./01_include -Wall
 
 all: $(OBJS)
 	@echo "LD  "$(TARGET)
