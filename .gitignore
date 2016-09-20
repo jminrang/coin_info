@@ -1,5 +1,6 @@
 # Target
 coin_info
+*.swp
 
 # Object files
 *.o
