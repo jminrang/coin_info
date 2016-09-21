@@ -7,6 +7,45 @@ void json_parsing_print(json_object *obj)
 
 }
 
+void json_print_string(json_object *obj)
+{
+    const char  *string;
+    int         string_len;
+
+    string_len  = json_object_get_string_len(obj);
+    string  = malloc(string_len);
+    string  = json_object_get_string(obj);
+
+    printf("String = %s\n", string);
+}
+
+void json_type_check(json_object *obj)
+{
+    switch(json_object_get_type(obj))   {
+        case json_type_null:
+            printf("Type : NULL\n");
+            break;
+        case json_type_boolean:
+            printf("Type : boolearn\n");
+            break;
+        case json_type_double:
+            printf("Type : double\n");
+            break;
+        case json_type_int:
+            printf("Type : int\n");
+            break;
+        case json_type_object:
+            printf("Type : object\n");
+            break;
+        case json_type_array:
+            printf("Type : array\n");
+            break;
+        case json_type_string:
+            printf("Type : string\n");
+            break;
+    }
+}
+
 void json_parsing (void)
 {
     struct json_object *all_data;
