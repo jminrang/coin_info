@@ -1,0 +1,9 @@
+
+1. TODO list
+
+ - poloniex get public data performance.
+
+   test average   : 0.25s
+   target average : under 0.1s
+   curl performace issue        => Tuning.
+   Physical ISP isssue.         => Rent cloud server.
