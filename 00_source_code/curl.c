@@ -30,13 +30,17 @@ void set_curl_opt(const char *url)
 int get_curl_data(void)
 {
     CURLcode    res;
+    double      total_time;
 
     res = curl_easy_perform(curl_handle);
+    curl_easy_getinfo(curl_handle, CURLINFO_TOTAL_TIME, &total_time);
+
     if(res != CURLE_OK)  {
         fprintf(stderr, "curl_easy_perform() failed: %s\n", curl_easy_strerror(res));
         return  -1;
     } else  {
-        printf(GRN "get_date : " RESET "%lu bytes retrieved\n", (long)target_data.size);
+        printf(GRN "get_date   : " RESET "%lu bytes retrieved\n", (long)target_data.size);
+        printf(GRN "total time : " RESET "%fs\n", total_time);
 //        printf("%s\n", target_data.memory);
     }
 
