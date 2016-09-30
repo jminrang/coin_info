@@ -7,7 +7,8 @@
 #include <curl/curl.h>
 #include <json/json.h>
 
-#define TARGET_URL  "http://www.whattomine.com/coins.json"
+#define URL_WHAT_TO_MINE    "http://www.whattomine.com/coins.json"
+#define URL_POLONIEX        "https://poloniex.com/public?command=returnTicker"
 
 struct  memory  {
     char    *memory;
@@ -19,7 +20,7 @@ CURL        *curl_handle;
 struct memory   target_data;
 
 void    init_curl       (void);
-void    set_curl_opt    (void);
+void    set_curl_opt    (const char *url);
 int     get_curl_data   (void);
 void    del_curl        (void);
 

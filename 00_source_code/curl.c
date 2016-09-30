@@ -12,10 +12,10 @@ void init_curl   (void)
     curl_handle = curl_easy_init();
 }
 
-void set_curl_opt(void)
+void set_curl_opt(const char *url)
 {
     //  set url
-    curl_easy_setopt(curl_handle, CURLOPT_URL, TARGET_URL);
+    curl_easy_setopt(curl_handle, CURLOPT_URL, url);
 
     //  send all data to this function
     curl_easy_setopt(curl_handle, CURLOPT_WRITEFUNCTION, write_memory_callback);
