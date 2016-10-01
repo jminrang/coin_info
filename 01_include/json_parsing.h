@@ -16,10 +16,34 @@
    }
 */
 
+typedef struct  exchange_matching   {
+    int     id;
+    double  last;
+    double  lowest_ask;
+    double  highest_bid;
+    double  percent_change;
+    double  base_volume;
+    double  quote_volume;
+    double  is_frozen;
+    double  high_24hr;
+    double  low_24hr;
+} exchange_matching_t;
+
+typedef struct  exchange    {
+    const char                  *exchange;
+    struct exchange_matching    matching; 
+    struct exchange             *prev;
+    struct exchange             *next;
+} exchange_t;
+
 #define ENUM_TO_STRING(x)   #x
+
+struct exchange coin_exchange_data;
 
 typedef enum {false, true} bool;
 
 void json_parsing (void);
+void json_parsing_mem_debug_front(void);
+void json_parsing_mem_debug(void);
 
 #endif
