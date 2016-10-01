@@ -9,6 +9,7 @@
 
 #define URL_WHAT_TO_MINE    "http://www.whattomine.com/coins.json"
 #define URL_POLONIEX        "https://poloniex.com/public?command=returnTicker"
+#define EXCHANGE            "http://query.yahooapis.com/v1/public/yql?q=select%20*%20from%20yahoo.finance.xchange%20where%20pair%20in%20(%22USDKRW%22)&format=json&env=store://datatables.org/alltableswithkeys&callback"
 
 struct  memory  {
     char    *memory;
