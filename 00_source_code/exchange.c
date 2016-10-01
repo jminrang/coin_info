@@ -1,5 +1,5 @@
 
-#include "curl_struct.h"
+#include "exchange.h"
 
 void    get_exchange    (void)
 {
@@ -8,4 +8,8 @@ void    get_exchange    (void)
     set_curl_opt(url);
 
     get_curl_data();
+
+    exchange_data   = json_tokener_parse(target_data.memory);
+
+    json_parsing_print(exchange_data);
 }
